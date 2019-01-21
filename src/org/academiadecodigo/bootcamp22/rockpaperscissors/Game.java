@@ -32,7 +32,7 @@ public class Game {
         players[0].resetScore();
         players[1].resetScore();
 
-        while (players[0].getScore() < rounds && players[0].getScore() < rounds) { // TODO: 21/01/2019 player.getScore() -> DONE
+        while (players[0].getScore() < rounds && players[1].getScore() < rounds) { // TODO: 21/01/2019 player.getScore() -> DONE
 
             // players[0].choseHand().getDontknowdontcare(), players[1].choseHand().getDontknowdontcare())
 
@@ -52,7 +52,7 @@ public class Game {
 
             }
 
-            Utils.log("Player 1: " + players[0].getScore() + "  ||   Player 2: " + players[0].getScore());
+            Utils.log("Player 1: " + players[0].getScore() + "  ||   Player 2: " + players[1].getScore());
         }
 
 
