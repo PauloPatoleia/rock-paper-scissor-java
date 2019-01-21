@@ -55,7 +55,8 @@ public class Game {
             Utils.log("Player 1: " + players[0].getScore() + "  ||   Player 2: " + players[0].getScore());
         }
 
-        players[0].getScore() == 3 ? System.out.println(players[0].getName() + " won!") : System.out.println(players[1].getName() + " won!") ;
+
+        System.out.println(players[0].getScore() == rounds ? players[0].getName() + " won!" : players[1].getName() + " won!");
 
     }
 
