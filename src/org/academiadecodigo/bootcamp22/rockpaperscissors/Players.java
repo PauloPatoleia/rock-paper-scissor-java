@@ -3,6 +3,7 @@ package org.academiadecodigo.bootcamp22.rockpaperscissors;
 public class Players {
 
     private String name;
+    private int Score;
 
     public Players(String name) {
         this.name = name;
@@ -10,21 +11,23 @@ public class Players {
 
     public Hands choseHand() {
 
-        int pick = Random.Generate(3);
-
-        if(pick == 1) {
-            return Hands.ROCK;
-        }
-
-        if(pick == 2) {
-            return Hands.PAPER;
-        }
-
-        return Hands.SCISSORS;
+        return  Hands.values()[Random.Generate(Hands.values().length)];
 
     }
 
     public String getName() {
         return name;
+    }
+
+    public void roundWon() {
+        Score++;
+    }
+
+    public int getScore() {
+        return this.Score;
+    }
+
+    public void resetScore() {
+        this.Score = 0;
     }
 }

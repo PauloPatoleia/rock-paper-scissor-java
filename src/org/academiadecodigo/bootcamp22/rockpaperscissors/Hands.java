@@ -2,17 +2,13 @@ package org.academiadecodigo.bootcamp22.rockpaperscissors;
 
 public enum Hands {
 
-    ROCK("rock"),
-    PAPER("paper"),
-    SCISSORS("scissors");
+    ROCK,
+    PAPER,
+    SCISSORS;
 
-    private String dontknowdontcare;
-
-    Hands(String dontknowdontcare) {
-        this.dontknowdontcare = dontknowdontcare;
-    }
-
-    public String getDontknowdontcare() {
-        return this.dontknowdontcare;
+    public boolean beats(Hands hand) {
+        // TODO: 21/01/2019 who am i
+        // TODO: 21/01/2019 who's the other
+        return false;
     }
 }

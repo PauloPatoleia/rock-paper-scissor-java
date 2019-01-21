@@ -4,7 +4,7 @@ public class Random {
 
         public static int Generate(int n) {
 
-            return (int) Math.floor(Math.random() * n + 1);
+            return (int) Math.floor(Math.random() * (n));
 
         }
 
