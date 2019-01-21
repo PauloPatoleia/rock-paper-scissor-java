@@ -4,8 +4,16 @@ public class Game {
 
     Players[] players;
     int rounds;
+    boolean ReadyToPlay = true;
 
     public Game(Players[] players, int rounds) {
+
+        if (players.length != 2) {
+
+            ReadyToPlay = false;
+            System.out.println("Game requires 2 players, no more, no less.");
+
+        }
 
         this.players = players;
         this.rounds = rounds;
@@ -14,45 +22,49 @@ public class Game {
 
     public void start() {
 
-        Utils.log("Game started");
+        if(ReadyToPlay) {
 
-        int PlayerOne = 0;
-        int PlayerTwo = 0;
+            Utils.log("Game started");
 
-        while(PlayerOne < rounds && PlayerTwo < rounds) {
+            int PlayerOne = 0;
+            int PlayerTwo = 0;
 
-           // players[0].choseHand().getDontknowdontcare(), players[1].choseHand().getDontknowdontcare())
+            while(PlayerOne < rounds && PlayerTwo < rounds) {
 
-            String PlayerOnePick = players[0].choseHand().getDontknowdontcare();
-            String PlayerTwoPick = players[1].choseHand().getDontknowdontcare();
+                // players[0].choseHand().getDontknowdontcare(), players[1].choseHand().getDontknowdontcare())
 
-            Utils.log("1 " + PlayerOnePick);
-            Utils.log("2 " + PlayerTwoPick);
+                String PlayerOnePick = players[0].choseHand().getDontknowdontcare();
+                String PlayerTwoPick = players[1].choseHand().getDontknowdontcare();
 
-            switch (checkWinner(PlayerOnePick, PlayerTwoPick)) {
+                Utils.log("1 " + PlayerOnePick);
+                Utils.log("2 " + PlayerTwoPick);
 
-                case 0:
-                    break;
-                case 1:
-                    PlayerOne++;
-                    break;
-                case 2:
-                    PlayerTwo++;
-                    break;
-                default:
+                switch (checkWinner(PlayerOnePick, PlayerTwoPick)) {
 
+                    case 0:
+                        break;
+                    case 1:
+                        PlayerOne++;
+                        break;
+                    case 2:
+                        PlayerTwo++;
+                        break;
+                    default:
+
+                }
+
+                Utils.log("Player 1: " + PlayerOne + "  ||   Player 2: " + PlayerTwo);
             }
 
-            Utils.log("Player 1: " + PlayerOne + "  ||   Player 2: " + PlayerTwo);
-        }
+            if(PlayerOne == 3) {
+                System.out.println(players[0].getName() + " won!");
+            }
 
-        if(PlayerOne == 3) {
-            System.out.println(players[0].getName() + " won!");
-        }
+            if(PlayerTwo == 3) {
+                System.out.println(players[1].getName() + " won!");
+            }
 
-         if(PlayerTwo == 3) {
-             System.out.println(players[1].getName() + " won!");
-         }
+        }
 
     }
 
